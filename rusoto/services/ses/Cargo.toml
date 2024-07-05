@@ -39,7 +39,7 @@ version = "1.0.2"
 optional = true
 
 [dev-dependencies]
-tokio = "1.0"
+tokio = { git = "https://github.com/wasix-org/tokio.git", branch = "wasix-1.35.1" }
 
 [dev-dependencies.rusoto_mock]
 version = "0.48.0"
@@ -47,8 +47,6 @@ path = "../../../mock"
 default-features = false
 
 [features]
-default = ["native-tls"]
+default = []
 deserialize_structs = ["bytes/serde", "serde", "serde_derive"]
-native-tls = ["rusoto_core/native-tls"]
-rustls = ["rusoto_core/rustls"]
 serialize_structs = ["bytes/serde", "serde", "serde_derive"]

@@ -220,41 +220,13 @@ pub struct HttpClient<C = HttpsConnector<HttpConnector>> {
 impl HttpClient {
     /// Create a tls-enabled http client.
     pub fn new() -> Result<Self, TlsError> {
-        #[cfg(feature = "native-tls")]
-        let connector = HttpsConnector::new();
-
-        #[cfg(feature = "rustls")]
-        let connector = {
-            let builder = crate::tls::HttpsConnectorBuilder::new();
-
-            #[cfg(not(feature = "rustls-webpki"))]
-            let builder = builder.with_native_roots();
-            #[cfg(feature = "rustls-webpki")]
-            let builder = builder.with_webpki_roots();
-
-            builder.https_only().enable_http2().build()
-        };
-
+        let connector = HttpConnector::new();
         Ok(Self::from_connector(connector))
     }
 
     /// Create a tls-enabled http client.
     pub fn new_with_config(config: HttpConfig) -> Result<Self, TlsError> {
-        #[cfg(feature = "native-tls")]
-        let connector = HttpsConnector::new();
-
-        #[cfg(feature = "rustls")]
-        let connector = {
-            let builder = crate::tls::HttpsConnectorBuilder::new();
-
-            #[cfg(not(feature = "rustls-webpki"))]
-            let builder = builder.with_native_roots();
-            #[cfg(feature = "rustls-webpki")]
-            let builder = builder.with_webpki_roots();
-
-            builder.https_only().enable_http2().build()
-        };
-
+        let connector = HttpConnector::new();
         Ok(Self::from_connector_with_config(connector, config))
     }
 

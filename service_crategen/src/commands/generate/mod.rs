@@ -85,10 +85,8 @@ pub fn generate_services(
         }
 
         let mut features = BTreeMap::new();
-        features.insert("default".into(), vec!["native-tls".into()]);
-        features.insert("native-tls".into(), vec!["rusoto_core/native-tls".into()]);
-        features.insert("rustls".into(), vec!["rusoto_core/rustls".into()]);
-
+        features.insert("default".into(), vec![]);
+        
         let mut serialize_feature_dependencies = vec!["bytes/serde".into()];
 
         let service_dependencies = service.get_dependencies();
@@ -182,8 +180,6 @@ Rust stable or beta are required to use Rusoto. Nightly is tested, but not guara
 versions _may_ be supported. The currently supported Rust versions can be found in the Rusoto project
 [`travis.yml`](https://github.com/rusoto/rusoto/blob/master/.travis.yml).
 
-On Linux, OpenSSL is required if using the `native-tls` feature.
-
 ## Installation
 
 To use `{crate_name}` in your application, add it as a dependency in your `Cargo.toml`:
@@ -194,12 +190,8 @@ To use `{crate_name}` in your application, add it as a dependency in your `Cargo
 ```
 
 ## Crate Features
-- `native-tls` - use platform-specific TLS implementation.
-- `rustls` - use rustls TLS implementation.
 - `serialize_structs` - output structs of most operations get `derive(Serialize)`.
 - `deserialize_structs` - input structs of most operations get `derive(Deserialize)`.
-
-Note: the crate will use the `native-tls` TLS implementation by default.
 
 ## Contributing
 

@@ -14,7 +14,7 @@ rusoto_sts = { path = "../rusoto/services/sts" }
 
 doc-comment = "0.3"
 env_logger = "0.5"
-tokio = "1.0"
+tokio = { git = "https://github.com/wasix-org/tokio.git", branch = "wasix-1.35.1" }
 
 [build-dependencies]
 glob = "0.3"

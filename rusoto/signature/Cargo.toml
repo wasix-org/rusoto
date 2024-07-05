@@ -26,7 +26,7 @@ digest = "0.9.0"
 futures = "0.3"
 hmac = "0.11"
 http = "0.2"
-hyper = { version = "0.14", features = ["stream"] }
+hyper = { git = "https://github.com/wasix-org/hyper.git", branch = "v0.14.28", features = ["stream"] }
 log = "0.4.1"
 md-5 = "0.9"
 base64 = "0.13"
@@ -35,7 +35,7 @@ serde = "1"
 sha2 = "0.9"
 percent-encoding = "2.1.0"
 pin-project-lite = "0.2"
-tokio = { version = "1.0", features = ["macros", "rt-multi-thread"] }
+tokio = { git = "https://github.com/wasix-org/tokio.git", branch = "wasix-1.35.1", features = ["macros", "rt-multi-thread"] }
 
 [dependencies.rusoto_credential]
 version = "0.48.0"
@@ -44,7 +44,7 @@ path = "../credential"
 [dev-dependencies]
 serde_json = "1"
 serde_test = "1"
-tokio = { version = "1.0", features = ["io-util"] }
+tokio = { git = "https://github.com/wasix-org/tokio.git", branch = "wasix-1.35.1", features = ["io-util"] }
 
 [package.metadata.docs.rs]
 targets = []
