@@ -210,7 +210,7 @@ impl<D: DispatchSignedRequest> DispatchSignedRequest for Arc<D> {
 }
 
 /// Http client for use with AWS services.
-pub struct HttpClient<C = HttpsConnector<HttpConnector>> {
+pub struct HttpClient<C = HttpConnector> {
     inner: HyperClient<C, Body>,
     local_agent_prepend: Option<String>,
     local_agent_append: Option<String>,
