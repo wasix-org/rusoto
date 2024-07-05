@@ -32,7 +32,7 @@ path = "../../core"
 default-features = false
 
 [dev-dependencies]
-tokio = { git = "https://github.com/wasix-org/tokio.git", branch = "wasix-1.35.1" } }
+tokio = { git = "https://github.com/wasix-org/tokio.git", branch = "wasix-1.35.1" }
 
 [dev-dependencies.rusoto_mock]
 version = "0.48.0"
