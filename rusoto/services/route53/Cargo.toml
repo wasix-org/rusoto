@@ -46,6 +46,6 @@ path = "../../../mock"
 default-features = false
 
 [features]
-default = ["]
+default = []
 deserialize_structs = ["bytes/serde", "serde", "serde_derive"]
 serialize_structs = ["bytes/serde", "serde", "serde_derive"]
