@@ -6,4 +6,4 @@ edition = "2018"
 
 [dependencies]
 hyper = { git = "https://github.com/wasix-org/hyper.git", branch = "v0.14.28", features = ["http1", "server", "tcp"] }
-tokio = { git = "https://github.com/wasix-org/tokio.git", branch = "wasix-1.35.1", features = ["macros", "rt-multi-thread"] }
+tokio = { git = "https://github.com/wasix-org/tokio.git", branch = "wasix-1.47.0", features = ["macros", "rt-multi-thread"] }
